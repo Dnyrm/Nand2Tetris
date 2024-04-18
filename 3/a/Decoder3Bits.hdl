@@ -1,0 +1,27 @@
+
+CHIP Decoder3Bits {
+    IN address[3];
+    OUT a, b, c, d, e, f, g, h;
+
+    PARTS:
+    Not(in=address[0], out=notOutZero);
+    Not(in=address[1], out=notOutOne);
+    Not(in=address[2], out=notOutTwo);
+
+    And(a=notOutZero, b=notOutOne, out=andNotOneZero);
+    And(a=notOutTwo, b=notOutZero, out=andNotTwoZero);
+    And(a=notOutTwo, b=notOutOne, out=andNotTwoOne);
+
+    And(a=address[2], b=address[0], out=andTwoZero);
+    And(a=address[2], b=address[1], out=andTwoOne);
+    And(a=address[1], b=address[0], out=andOneZero);
+
+    And(a=andNotTwoOne, b=notOutZero, out=a);
+    And(a=andNotTwoOne, b=address[0], out=b);
+    And(a=andNotTwoZero, b=address[1], out=c);
+    And(a=andOneZero, b=notOutTwo, out=d);
+    And(a=andNotOneZero, b=address[2], out=e);
+    And(a=andTwoZero, b=notOutOne, out=f);
+    And(a=andTwoOne, b=notOutZero, out=g);
+    And(a=andTwoOne, b=address[0], out=h); 
+}
