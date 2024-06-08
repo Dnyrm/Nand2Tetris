@@ -1,3 +1,0 @@
-/Users/danielmadjar/CLionProjects/syntax_analyzer/cmake-build-debug/CMakeFiles/syntax_analyzer.dir
-/Users/danielmadjar/CLionProjects/syntax_analyzer/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/danielmadjar/CLionProjects/syntax_analyzer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
